@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+    <!--记得修改始终复制 -->     
+<!--映射类所在的程序集（项目右键属性查看） 和  命名空间-->
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="2dPveDemoSever"
+                   namespace="_2dPveDemoSever.DOA">
+    
+<!--类名和数据库表名匹配   类和主键匹配  自增用native不自增用guide -->
+    <class name="GameData" table="gamedata">
+        <id name="PhoneNum" column="PhoneNumber" type="Int32">
+            <generator class="assigned" />
+        </id>
+        <!--数据对应关系-->
+        <property name="UserName" column="UserName" type="string" />
+        <property name="Password" column="PassWord" type="string" />
+        <property name="PassResult" column="PassResult" type="string" />
+        <property name="PassTime" column="PassTime" type="string" />
+        <property name="PassScore" column="PassScore" type="Int32" />
+    </class>
+
+</hibernate-mapping>

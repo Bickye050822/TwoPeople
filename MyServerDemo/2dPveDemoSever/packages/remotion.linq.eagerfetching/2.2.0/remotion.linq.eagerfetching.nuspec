@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>Remotion.Linq.EagerFetching</id>
+    <version>2.2.0</version>
+    <title>Remotion.Linq.EagerFetching</title>
+    <authors>rubicon IT GmbH</authors>
+    <owners>rubicon IT GmbH</owners>
+    <licenseUrl>http://opensource.org/licenses/LGPL-2.1</licenseUrl>
+    <projectUrl>https://github.com/re-motion/Relinq-EagerFetching/</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Allows LINQ providers based on re-linq Frontend to support eager fetching.</description>
+    <copyright>Copyright (c) rubicon IT GmbH, www.rubicon.eu - Licensed under GNU LGPL 2.1 (or later)</copyright>
+    <tags>re-motion LINQ Eager Fetching</tags>
+    <dependencies>
+      <group targetFramework="net35">
+        <dependency id="Remotion.Linq" version="[2.2.0, )" />
+      </group>
+      <group targetFramework="net40">
+        <dependency id="Remotion.Linq" version="[2.2.0, )" />
+      </group>
+      <group targetFramework="net45">
+        <dependency id="Remotion.Linq" version="[2.2.0, )" />
+      </group>
+      <group targetFramework="portable-net45+win+wpa81+wp80">
+        <dependency id="Remotion.Linq" version="[2.2.0, )" />
+      </group>
+      <group targetFramework=".NETStandard1.0">
+        <dependency id="Remotion.Linq" version="[2.2.0, )" />
+        <dependency id="System.Collections" version="[4.0.11, )" />
+        <dependency id="System.Linq" version="[4.1.0, )" />
+        <dependency id="System.Linq.Expressions" version="[4.1.0, )" />
+        <dependency id="System.ObjectModel" version="[4.0.12, )" />
+        <dependency id="System.Reflection" version="[4.1.0, )" />
+        <dependency id="System.Runtime" version="[4.1.0, )" />
+      </group>
+    </dependencies>
+  </metadata>
+</package>

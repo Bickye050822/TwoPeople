@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-configuration xmlns="urn:nhibernate-configuration-2.2">
+    <session-factory>
+        <property name="connection.provider">NHibernate.Connection.DriverConnectionProvider</property>
+        <property name="dialect">NHibernate.Dialect.MySQL5Dialect</property>
+        <property name="connection.driver_class">NHibernate.Driver.MySqlDataDriver, NHibernate</property>
+        <!-- 修改 SslMode 参数：9.5.0+ 版本已移除 None，改用 Disabled -->
+        <property name="connection.connection_string">Server=localhost;Port=3306;Database=2dpvedata;Uid=root;Pwd=050822;CharSet=utf8mb4;AllowPublicKeyRetrieval=True;SslMode=Disabled;</property>
+        <property name="show_sql">true</property>
+    </session-factory>
+</hibernate-configuration>
