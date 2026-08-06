@@ -18,7 +18,7 @@ TwoPeople 是一款 **2D 横版双人协作 PVE 动作游戏**。两名玩家通
 | 网络框架 | Photon PUN 2 + 自建 Photon Socket Server |
 | 服务端 | C# Photon Socket Server（ApplicationBase） |
 | 数据持久化 | NHibernate + MySQL |
-| 资源热更新 | 服务端版本校验 + MD5 文件完整性校验 + AssetBundle 下载 |
+| 资源热更新 | XLua + MD5 校验实现图片替换 |
 | 通信协议 | 自定义 OperationCode / EventCode / ParameterCode |
 
 ## 📁 项目结构
@@ -102,11 +102,10 @@ TwoPeople/
 - **Master Client 权威模式**：房主控制敌人 AI 与波次
 - 所有游戏操作通过自定义 Operation/Event 协议同步
 
-### 🔥 资源热更新
-- **服务端版本管理**：客户端启动时向服务器请求最新资源版本号
-- **MD5 校验**：对比本地资源与服务器资源的 MD5 码，判断是否需要更新
-- **增量下载**：仅下载 MD5 不一致的资源文件（AssetBundle），节省流量
-- **断点续传**：支持大文件分段下载，中断后可续传
+### 🔥 资源热更新（XLua + MD5）
+- **XLua 脚本驱动**：通过 XLua 在运行时动态加载 Lua 脚本，实现不重新打包即可更新游戏逻辑和资源
+- **MD5 校验**：服务端存储资源文件的 MD5 码，客户端启动时对比本地 MD5，判断是否需要拉取新资源
+- **图片热替换**：通过 MD5 校验发现变更的图片资源后，从服务器下载并替换本地资源，无需重新安装
 
 ### ⚔️ 战斗系统
 - **普通攻击**：三段连击（Combo 机制 + 预输入缓冲）
@@ -176,5 +175,6 @@ TwoPeople/
 - Unity 版本：见 `ProjectSettings/ProjectVersion.txt`
 - [Photon PUN 2](https://assetstore.unity.com/packages/tools/network/pun-2-free-119922)
 - [Photon Socket Server SDK](https://www.photonengine.com/en-us/server-sdks)
+- [XLua](https://github.com/Tencent/xLua)
 - NHibernate
 - MySQL
